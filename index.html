@@ -4,221 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAINBOW - Luxury Hand Painted Sarees</title>
-    
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <style>
-        /* Luxury Font Styling */
-        body { font-family: 'Montserrat', sans-serif; color: #333; margin: 0; background-color: #fffaf0; } /* Soft Cream Background */
-        h1, h2, h3, .luxury-text { font-family: 'Cinzel', serif; } /* Ancient Luxury Look */
+        body { font-family: 'Montserrat', sans-serif; background-color: #fff; color: #333; }
+        .luxury-text { font-family: 'Cinzel', serif; letter-spacing: 4px; }
+        .nav-item { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+        .nav-item:hover { color: #be185d; }
         
-        /* Premium Colors */
-        :root {
-            --primary-pink: #be185d; /* Rich Pink */
-            --gold: #b59410;       /* Rich Gold */
-            --cream: #fffaf0;
-            --overlay: rgba(190, 24, 93, 0.05); /* Very light pink overlay */
-        }
-
-        /* 1. Transparent Header (අර Photo එකේ වගේම) */
-        header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
-        .nav-item { color: #555; font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; }
-        .nav-item:hover { color: var(--gold); }
-
-        /* 2. Hero Section (ලොකුම පින්තූරය) */
-        .hero-banner { height: 90vh; background-image: url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200'); background-size: cover; background-position: center; }
-        .hero-title { font-size: 7vw; line-height: 1.1; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.4); }
-        .hero-title span { font-weight: 700; color: var(--gold); }
-
-        /* 3. Product Cards (Premium Modern Look) */
-        .saree-card { background: white; border: 1px solid #f0f0f0; transition: all 0.4s ease; overflow: hidden; position: relative; }
-        .saree-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--gold); }
-        .saree-img { transition: transform 0.6s ease; object-fit: cover; }
-        .saree-card:hover .saree-img { transform: scale(1.08); }
-        .card-price { color: var(--primary-pink); font-size: 1.3rem; font-weight: 700; }
-        .card-price span { color: var(--gold); }
-
-        /* Buy Now Animation (Hover) */
-        .buy-now-btn { background-color: var(--primary-pink); color: white; transform: translateY(100%); transition: all 0.4s ease; opacity: 0; }
-        .saree-card:hover .buy-now-btn { transform: translateY(0); opacity: 1; }
-        .buy-now-btn:hover { background-color: var(--gold); }
-
-        /* 4. Emerald Collection (COLLECTION Section) */
-        .collection-banner { height: 80vh; background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200'); }
-        .collection-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)); }
-        .collection-title { font-size: 8vw; color: white; letter-spacing: 8px; font-weight: 700; text-transform: uppercase; }
-
-        /* 5. Twice as Cozy (පහළ තොරතුරු) */
-        .story-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; transition: transform 0.5s ease; }
-        .story-img:hover { transform: rotate(-3deg) scale(1.05); }
-
-        /* 6. Premium Footer */
-        footer { background-color: #212121; color: #ddd; }
-        footer .footer-title { color: var(--gold); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        /* Product Card Hover */
+        .saree-card:hover img { transform: scale(1.05); }
+        .buy-btn { opacity: 0; transform: translateY(20px); transition: 0.4s; }
+        .saree-card:hover .buy-btn { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
 
-<header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
-    <div class="container mx-auto px-6 py-4">
-        <div class="text-center mb-4">
-            <h1 class="text-2xl md:text-3xl font-bold uppercase tracking-[0.3em] luxury-text text-pink-700">
-                RAINBOW HAND PAINTING SAREE
-            </h1>
+    <header class="bg-white sticky top-0 z-50 py-6 border-b border-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-6">
+                <h1 class="text-3xl font-bold luxury-text text-gray-900">RAINBOW</h1>
+            </div>
+            <nav class="flex justify-center space-x-10">
+                <a href="#" class="nav-item">Home</a>
+                <a href="#" class="nav-item">New Arrival</a>
+                <a href="#" class="nav-item font-bold text-pink-700">Sarees</a>
+                <a href="#" class="nav-item">Hand Paint</a>
+                <a href="#" class="nav-item">Sale</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="h-[90vh] bg-cover bg-center flex items-center justify-center relative" 
+             style="background-image: url('මෙතනට_පළමු_පින්තූරයේ_ලින්ක්_එක_දාන්න');">
+        <div class="absolute inset-0 bg-black/20"></div>
+        </section>
+
+    <section id="products" class="container mx-auto px-6 py-24">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl luxury-text uppercase">New Arrivals</h2>
+            <div class="w-12 h-[2px] bg-pink-700 mx-auto mt-4"></div>
         </div>
         
-        <nav class="flex justify-center space-x-6 md:space-x-12 text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold border-t border-gray-50 pt-4">
-            <a href="#" class="nav-item hover:text-gold transition">Home</a>
-            <a href="#" class="nav-item hover:text-gold transition">New Arrivals</a>
-            <a href="#" class="nav-item text-pink-700 font-bold underline decoration-gold underline-offset-8">Sarees</a>
-            <a href="#" class="nav-item hover:text-gold transition">Hand Paint</a>
-            <a href="#" class="nav-item hover:text-gold transition">Sale</a>
-        </nav>
-
-        <div class="absolute right-6 top-1/2 -translate-y-1/2 hidden md:flex space-x-5 text-lg text-gray-700">
-            <i class="fas fa-search cursor-pointer hover:text-pink-600"></i>
-            <i class="fab fa-whatsapp cursor-pointer hover:text-pink-600"></i>
-        </div>
-    </div>
-</header>
-    <section class="h-[80vh] bg-cover bg-center flex items-center justify-center relative" style="background-image: url('YOUR_IMAGE_LINK_HERE');">
-    <div class="absolute inset-0 bg-black/30"></div>
-    
-    <div class="text-center relative z-10 text-white max-w-2xl px-6">
-        <h2 class="text-6xl font-bold uppercase tracking-widest luxury-text leading-tight">Emerald Collection</h2>
-        <p class="mt-6 text-xl text-gray-100 italic">අතින් සිත්තම් කළ අලංකාර සාරි එකතුව</p>
-        <a href="#products" class="inline-block mt-10 bg-white text-gray-900 px-10 py-4 uppercase text-xs tracking-widest font-bold hover:bg-gray-100 transition duration-300">View Collection</a>
-    </div>
-</section>
-
-    <section id="products" class="container mx-auto px-10 py-24 text-center">
-    <h2 class="text-4xl md:text-5xl font-semibold text-gray-900 mb-20 luxury-text uppercase tracking-widest">New Arrivals<span class="block w-24 h-1 bg-pink-700 mx-auto mt-5"></span></h2>
-    
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16">
-        
-        <div class="saree-card relative p- group overflow-hidden border border-gray-100/50 hover:border-gold/50 transition duration-300 rounded-sm">
-            <div class="aspect-[3/4] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=400" alt="Real Saree 1" class="w-full h-full saree-img group-hover:scale-105 transition-transform duration-500">
-            </div>
-            <div class="mt-6 text-center px-2 pb-2">
-                <h3 class="text-sm font-medium text-gray-800 uppercase tracking-wider Cinzel-serif">Premium Hand Paint</h3>
-                <p class="card-price mt-3 text-lg font-bold">රු. <span>8,500</span>.00</p>
-            </div>
-            <button class="buy-now-btn absolute bottom-0 left-0 right-0 py-4 text-xs uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition duration-300 translate-y-10 group-hover:translate-y-0">Buy Now</button>
-        </div>
-
-        <div class="saree-card relative p- group overflow-hidden border border-gray-100/50 hover:border-gold/50 transition duration-300 rounded-sm">
-            <div class="aspect-[3/4] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=400" alt="Real Saree 2" class="w-full h-full saree-img group-hover:scale-105 transition-transform duration-500">
-            </div>
-            <div class="mt-6 text-center px-2 pb-2">
-                <h3 class="text-sm font-medium text-gray-800 uppercase tracking-wider Cinzel-serif">Royal Red Saree</h3>
-                <p class="card-price mt-3 text-lg font-bold">රු. <span>12,500</span>.00</p>
-            </div>
-            <button class="buy-now-btn absolute bottom-0 left-0 right-0 py-4 text-xs uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition duration-300 translate-y-10 group-hover:translate-y-0">Buy Now</button>
-        </div>
-
-        <div class="saree-card relative p- group overflow-hidden border border-gray-100/50 hover:border-gold/50 transition duration-300 rounded-sm">
-            <div class="aspect-[3/4] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=400" alt="Real Saree 3" class="w-full h-full saree-img group-hover:scale-105 transition-transform duration-500">
-            </div>
-            <div class="mt-6 text-center px-2 pb-2">
-                <h3 class="text-sm font-medium text-gray-800 uppercase tracking-wider Cinzel-serif">Classic Blue Paint</h3>
-                <p class="card-price mt-3 text-lg font-bold">රු. <span>9,000</span>.00</p>
-            </div>
-            <button class="buy-now-btn absolute bottom-0 left-0 right-0 py-4 text-xs uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition duration-300 translate-y-10 group-hover:translate-y-0">Buy Now</button>
-        </div>
-
-        <div class="saree-card relative p- group overflow-hidden border border-gray-100/50 hover:border-gold/50 transition duration-300 rounded-sm">
-            <div class="aspect-[3/4] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=400" alt="Real Saree 4" class="w-full h-full saree-img group-hover:scale-105 transition-transform duration-500">
-            </div>
-            <div class="mt-6 text-center px-2 pb-2">
-                <h3 class="text-sm font-medium text-gray-800 uppercase tracking-wider Cinzel-serif">Golden Amber Saree</h3>
-                <p class="card-price mt-3 text-lg font-bold">රු. <span>15,000</span>.00</p>
-            </div>
-            <button class="buy-now-btn absolute bottom-0 left-0 right-0 py-4 text-xs uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition duration-300 translate-y-10 group-hover:translate-y-0">Buy Now</button>
-        </div>
-
-        <div class="saree-card relative p- group overflow-hidden border border-gray-100/50 hover:border-gold/50 transition duration-300 rounded-sm">
-            <div class="aspect-[3/4] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=400" alt="Real Saree 5" class="w-full h-full saree-img group-hover:scale-105 transition-transform duration-500">
-            </div>
-            <div class="mt-6 text-center px-2 pb-2">
-                <h3 class="text-sm font-medium text-gray-800 uppercase tracking-wider Cinzel-serif">Emerald Hand Paint</h3>
-                <p class="card-price mt-3 text-lg font-bold">රු. <span>11,000</span>.00</p>
-            </div>
-            <button class="buy-now-btn absolute bottom-0 left-0 right-0 py-4 text-xs uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition duration-300 translate-y-10 group-hover:translate-y-0">Buy Now</button>
-        </div>
-
-        <div class="saree-card relative p- group overflow-hidden border border-gray-100/50 hover:border-gold/50 transition duration-300 rounded-sm">
-            <div class="aspect-[3/4] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=400" alt="Real Saree 6" class="w-full h-full saree-img group-hover:scale-105 transition-transform duration-500">
-            </div>
-            <div class="mt-6 text-center px-2 pb-2">
-                <h3 class="text-sm font-medium text-gray-800 uppercase tracking-wider Cinzel-serif">Midnight Saree</h3>
-                <p class="card-price mt-3 text-lg font-bold">රු. <span>14,000</span>.00</p>
-            </div>
-            <button class="buy-now-btn absolute bottom-0 left-0 right-0 py-4 text-xs uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition duration-300 translate-y-10 group-hover:translate-y-0">Buy Now</button>
-        </div>
-
-        <div class="saree-card relative p- group overflow-hidden border border-gray-100/50 hover:border-gold/50 transition duration-300 rounded-sm">
-            <div class="aspect-[3/4] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=400" alt="Real Saree 7" class="w-full h-full saree-img group-hover:scale-105 transition-transform duration-500">
-            </div>
-            <div class="mt-6 text-center px-2 pb-2">
-                <h3 class="text-sm font-medium text-gray-800 uppercase tracking-wider Cinzel-serif">Blush Pink Saree</h3>
-                <p class="card-price mt-3 text-lg font-bold">රු. <span>10,500</span>.00</p>
-            </div>
-            <button class="buy-now-btn absolute bottom-0 left-0 right-0 py-4 text-xs uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition duration-300 translate-y-10 group-hover:translate-y-0">Buy Now</button>
-        </div>
-
-        <div class="saree-card relative p- group overflow-hidden border border-gray-100/50 hover:border-gold/50 transition duration-300 rounded-sm">
-            <div class="aspect-[3/4] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=400" alt="Real Saree 8" class="w-full h-full saree-img group-hover:scale-105 transition-transform duration-500">
-            </div>
-            <div class="mt-6 text-center px-2 pb-2">
-                <h3 class="text-sm font-medium text-gray-800 uppercase tracking-wider Cinzel-serif">Orchid Purple Saree</h3>
-                <p class="card-price mt-3 text-lg font-bold">රු. <span>16,000</span>.00</p>
-            </div>
-            <button class="buy-now-btn absolute bottom-0 left-0 right-0 py-4 text-xs uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition duration-300 translate-y-10 group-hover:translate-y-0">Buy Now</button>
-        </div>
-
-    </div>
-</section>
-
-    <footer class="py-16 px-10 border-t border-gray-100">
-        <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-sm text-gray-300 font-light">
-            <div>
-                <h4 class="footer-title mb-6">About Us</h4>
-                <p class="mb-2">Our Story</p>
-                <p class="mb-2">Process</p>
-                <p class="mb-2">Our Quality</p>
-            </div>
-            <div>
-                <h4 class="footer-title mb-6">Customer Service</h4>
-                <p class="mb-2">Contact Us</p>
-                <p class="mb-2">Delivery Options</p>
-                <p class="mb-2">Payment Methods</p>
-            </div>
-            <div class="col-span-2 md:text-right">
-                <h4 class="footer-title mb-6 text-pink-700">RAINBOW</h4>
-                <p class="mb-2">+94 77 123 4567</p>
-                <p class="mb-2">Time / AM 08:00 - PM 10:00</p>
-                <p class="mb-2">Email / rainbow@shoplineapp.com</p>
-                <div class="flex space-x-5 md:justify-end mt-6 text-xl text-gray-400">
-                    <i class="fab fa-facebook hover:text-pink-600 cursor-pointer"></i>
-                    <i class="fab fa-instagram hover:text-pink-600 cursor-pointer"></i>
-                    <i class="fab fa-whatsapp hover:text-pink-600 cursor-pointer"></i>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="saree-card group cursor-pointer">
+                <div class="aspect-[3/4] overflow-hidden bg-gray-100 relative">
+                    <img src="https://via.placeholder.com/400x533" class="w-full h-full object-cover transition-transform duration-700">
+                    <button class="buy-btn absolute bottom-0 w-full bg-pink-700 text-white py-4 text-xs font-bold uppercase tracking-widest">Buy Now</button>
+                </div>
+                <div class="mt-4 text-center">
+                    <h3 class="text-sm text-gray-600 uppercase">Premium Saree Name</h3>
+                    <p class="text-pink-700 font-bold mt-1">රු. 8,500.00</p>
                 </div>
             </div>
+            </div>
+    </section>
+
+    <section class="h-[80vh] bg-cover bg-fixed bg-center flex items-center justify-center relative" 
+             style="background-image: url('මෙතනට_දෙවන_පින්තූරයේ_ලින්ක්_එක_දාන්න');">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 text-center text-white">
+            <h2 class="text-7xl font-bold luxury-text uppercase tracking-[15px]">Collection</h2>
+            <button class="mt-10 border border-white px-12 py-4 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">View</button>
         </div>
-        <div class="text-center text-xs text-gray-500 mt-16 border-t border-gray-700 pt-10">
-            Privacy Policy | Terms & Conditions | © 2026 Rainbow. Premium Hand Painting Sarees.
+    </section>
+
+    <section class="container mx-auto px-6 py-32">
+        <div class="flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1 grid grid-cols-2 gap-4">
+                <img src="මෙතනට_කුඩා_පින්තූර_1_දාන්න" class="w-full aspect-[4/5] object-cover">
+                <img src="මෙතනට_කුඩා_පින්තූර_2_දාන්න" class="w-full aspect-[4/5] object-cover mt-12">
+            </div>
+            <div class="flex-1">
+                <h3 class="text-4xl luxury-text mb-6">Twice as Cozy</h3>
+                <div class="w-10 h-[2px] bg-pink-700 mb-8"></div>
+                <p class="text-gray-500 leading-relaxed text-lg font-light mb-8">
+                    Discover our latest hand-painted collection. Each piece is crafted with passion and precision, bringing unique artistry to your wardrobe. Perfect for those who value elegance and quality.
+                </p>
+                <a href="#" class="text-xs font-bold uppercase tracking-widest border-b border-black pb-2 hover:text-pink-700 hover:border-pink-700 transition">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-100 py-16 px-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+            <div>
+                <h4 class="text-xs font-bold uppercase mb-6 tracking-widest">About Us</h4>
+                <nav class="flex flex-col space-y-2 text-xs text-gray-500">
+                    <a href="#">Our Story</a>
+                    <a href="#">Our Spirit</a>
+                </nav>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase mb-6 tracking-widest">Customer Service</h4>
+                <nav class="flex flex-col space-y-2 text-xs text-gray-500">
+                    <a href="#">Contact Us</a>
+                    <a href="#">Delivery Options</a>
+                </nav>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase mb-6 tracking-widest">Call Us</h4>
+                <p class="text-xs text-gray-500">+94 77 123 4567</p>
+                <p class="text-xs text-gray-500 mt-2">Email: info@rainbowsaree.com</p>
+            </div>
         </div>
     </footer>
 

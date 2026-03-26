@@ -3,61 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rainbow Hand Painting Saree</title>
+    <title>Rainbow Hand Painting Saree - Luxury Collection</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;700&display=swap');
-        body { font-family: 'Abhaya Libre', serif; background-color: #fffafa; }
-        .saree-card:hover img { transform: scale(1.05); }
+        /* Modern Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;700&display=swap');
+        
+        body { font-family: 'Montserrat', sans-serif; background-color: #fff; color: #1a1a1a; }
+        h1, h2, h3, .nav-item { font-family: 'Playfair Display', serif; }
+        .hero-title { font-size: 10vw; line-height: 0.9; } /* විශාල අකුරු */
+        .card:hover .product-info { opacity: 1; }
     </style>
 </head>
 <body>
-    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl md:text-3xl font-bold text-pink-700 tracking-wider uppercase">Rainbow Hand Painting Saree</h1>
-            <div class="text-xl text-pink-700">
-                <i class="fab fa-whatsapp cursor-pointer"></i>
+
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="absolute left-1/2 transform -translate-x-1/2 text-2xl font-bold uppercase tracking-widest text-pink-700">
+                RAINBOW
             </div>
-        </div>
-    </nav>
-
-    <div class="bg-pink-100 py-16 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 px-4">Exquisite Hand Painted Collection</h2>
-        <p class="text-gray-600 italic px-4 text-lg">අතින් සිත්තම් කළ අලංකාර සාරි එකතුව - උසස්ම තත්ත්වයෙන්</p>
-    </div>
-
-    <div class="container mx-auto px-4 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-center">
             
-            <div class="saree-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
-                <div class="overflow-hidden h-96">
-                    <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=500" class="w-full h-full object-cover transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-semibold my-2">Elegant Blue Hand Paint</h3>
-                    <p class="text-pink-700 text-xl font-bold mb-4">රු. 8,500.00</p>
-                    <button class="bg-pink-700 text-white w-full py-3 rounded-full hover:bg-pink-800 transition font-bold uppercase tracking-widest text-sm" onclick="alert('Proceeding to Payment...')">Buy Now</button>
-                </div>
+            <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-wide">
+                <a href="#" class="nav-item text-gray-700 hover:text-pink-600">Home</a>
+                <a href="#" class="nav-item text-gray-700 hover:text-pink-600">New Arrivals</a>
+                <a href="#" class="nav-item text-gray-700 hover:text-pink-600">Clothes</a>
+            </nav>
+            
+            <div class="flex space-x-6 text-xl text-gray-700">
+                <i class="fas fa-search cursor-pointer hover:text-pink-600"></i>
+                <i class="far fa-user cursor-pointer hover:text-pink-600"></i>
+                <i class="fab fa-whatsapp cursor-pointer hover:text-pink-600"></i>
             </div>
-
-            <div class="saree-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300">
-                <div class="overflow-hidden h-96">
-                    <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=500" class="w-full h-full object-cover transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-semibold my-2">Classic Red Silk</h3>
-                    <p class="text-pink-700 text-xl font-bold mb-4">රු. 12,500.00</p>
-                    <button class="bg-pink-700 text-white w-full py-3 rounded-full hover:bg-pink-800 transition font-bold uppercase tracking-widest text-sm" onclick="alert('Proceeding to Payment...')">Buy Now</button>
-                </div>
-            </div>
-
         </div>
-    </div>
+    </header>
 
-    <footer class="bg-gray-900 text-white py-10 text-center">
-        <p class="text-lg tracking-widest mb-4">RAINBOW HAND PAINTING SAREE</p>
-        <p class="text-gray-500 text-sm px-4">© 2026 Rainbow Saree UX. Best Quality Guaranteed.</p>
+    <section class="bg-gray-50 flex items-center justify-center py-24 md:py-32 px-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="text-left">
+                <h1 class="hero-title font-bold text-gray-900 leading-none">The<br>Saree<br>Affair</h1>
+                <p class="mt-8 text-lg text-gray-600 leading-relaxed max-w-lg">Experience the pinnacle of luxury with our exquisite hand-painted sarees. Crafted for elegance, designed for you.</p>
+                <a href="#products" class="inline-block mt-10 bg-pink-700 text-white px-10 py-4 rounded-none uppercase text-sm tracking-widest hover:bg-pink-800 transition">Explore Collection</a>
+            </div>
+            <div class="aspect-[4/5] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=600');"></div>
+        </div>
+    </section>
+
+    <section id="products" class="container mx-auto px-6 py-20">
+        <h2 class="text-center text-5xl font-semibold text-gray-900 mb-16 relative">New Arrivals<span class="block w-20 h-0.5 bg-pink-600 mx-auto mt-4"></span></h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12">
+            
+            <div class="card relative group overflow-hidden">
+                <div class="aspect-[3/4] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=400');"></div>
+                <div class="mt-4 text-center">
+                    <h3 class="text-xl font-medium text-gray-800">Royal Hand Painting</h3>
+                    <p class="text-sm text-pink-700 font-bold mt-1">රු. 8,500.00</p>
+                </div>
+                <div class="product-info absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <button class="bg-white text-gray-900 px-6 py-3 text-xs uppercase tracking-widest font-bold">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="card relative group overflow-hidden">
+                <div class="aspect-[3/4] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=400');"></div>
+                <div class="mt-4 text-center">
+                    <h3 class="text-xl font-medium text-gray-800">Crimson Silk</h3>
+                    <p class="text-sm text-pink-700 font-bold mt-1">රු. 12,500.00</p>
+                </div>
+                <div class="product-info absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <button class="bg-white text-gray-900 px-6 py-3 text-xs uppercase tracking-widest font-bold">Buy Now</button>
+                </div>
+            </div>
+
+            </div>
+    </section>
+
+    <section class="h-[80vh] bg-cover bg-center relative flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200');">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="text-center relative z-10 text-white max-w-2xl px-6">
+            <h2 class="text-6xl font-bold leading-tight">Emerald Collection</h2>
+            <p class="mt-6 text-lg text-gray-100 italic">අතින් සිත්තම් කළ අලංකාර සාරි එකතුව</p>
+            <a href="#" class="inline-block mt-10 bg-white text-gray-900 px-10 py-4 uppercase text-sm tracking-widest hover:bg-gray-100 transition">View All</a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-50 py-16 px-6 mt-16 border-t border-gray-100">
+        <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-sm text-gray-700">
+            <div>
+                <h4 class="font-bold text-gray-900 uppercase mb-4">About Us</h4>
+                <p>Our Story</p>
+                <p>Process</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-gray-900 uppercase mb-4">Customer Service</h4>
+                <p>Contact Us</p>
+                <p>Delivery</p>
+            </div>
+            <div class="col-span-2">
+                <h4 class="font-bold text-gray-900 uppercase mb-4 text-pink-700">RAINBOW</h4>
+                <p>+94 77 123 4567</p>
+                <p>info@rainbowsaree.com</p>
+                <div class="flex space-x-4 mt-4 text-xl">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <p class="text-center text-xs text-gray-500 mt-12">© 2026 Rainbow Hand Painting Saree. All Rights Reserved.</p>
     </footer>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </body>
 </html>
